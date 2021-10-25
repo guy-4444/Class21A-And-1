@@ -1,4 +1,4 @@
-package com.guy.chickeninvaders;
+package com.guy.chickeninvaders.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.guy.chickeninvaders.Food;
+import com.guy.chickeninvaders.R;
 
 import java.util.ArrayList;
 
@@ -69,6 +72,9 @@ public class Activity_Panel extends AppCompatActivity {
         }
 
         index++;
+        if (index >= foods.size()) {
+            index = 0;
+        }
         panel_IMG_food.setImageResource(foods.get(index).getRes());
     }
 

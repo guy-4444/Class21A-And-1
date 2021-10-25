@@ -10,7 +10,7 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.ChickenInvaders">
         <activity
-            android:name=".Activity_Panel"
+            android:name=".activities.Activity_Panel"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
