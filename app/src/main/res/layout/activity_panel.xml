@@ -74,6 +74,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="#FFFF00"
         android:text="0000"
         android:textSize="50sp" />
 

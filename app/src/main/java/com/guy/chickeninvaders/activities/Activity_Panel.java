@@ -26,6 +26,8 @@ public class Activity_Panel extends AppCompatActivity {
 
     private ArrayList<Food> foods;
     private int index = 0;
+    private int score = 0;
+    private int lives = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,16 +68,37 @@ public class Activity_Panel extends AppCompatActivity {
 
     private void next(boolean ans) {
         if (foods.get(index).isChicken() == ans) {
+            score += 100;
             Toast.makeText(this, "Good", Toast.LENGTH_SHORT).show();
         } else {
+            lives--;
+            updateLivesViews();
+            score -= 50;
             Toast.makeText(this, "Bla Bla", Toast.LENGTH_SHORT).show();
         }
+        panel_LBL_score.setText("" + score);
 
         index++;
         if (index >= foods.size()) {
             index = 0;
         }
         panel_IMG_food.setImageResource(foods.get(index).getRes());
+
+        if (lives == 0) {
+            finish();
+        }
+    }
+
+    private void updateLivesViews() {
+        if (lives >= 3) {
+            return;
+        } else if (lives == 2) {
+            panel_IMG_heart3.setVisibility(View.INVISIBLE);
+        } else if (lives == 1) {
+            panel_IMG_heart2.setVisibility(View.INVISIBLE);
+        } else if (lives == 0) {
+            panel_IMG_heart1.setVisibility(View.INVISIBLE);
+        }
     }
 
 
@@ -84,6 +107,7 @@ public class Activity_Panel extends AppCompatActivity {
         panel_IMG_heart1 = findViewById(R.id.panel_IMG_heart1);
         panel_IMG_heart2 = findViewById(R.id.panel_IMG_heart2);
         panel_IMG_heart3 = findViewById(R.id.panel_IMG_heart3);
+        panel_LBL_score = findViewById(R.id.panel_LBL_score);
         panel_BTN_yes = findViewById(R.id.panel_BTN_yes);
         panel_BTN_no = findViewById(R.id.panel_BTN_no);
     }
