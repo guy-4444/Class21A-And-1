@@ -39,6 +39,15 @@
         android:layout_toEndOf="@id/panel_IMG_heart2"
         android:src="@drawable/ic_heart" />
 
+    <ImageView
+        android:id="@+id/panel_IMG_heart4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@id/panel_IMG_heart1"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/panel_IMG_heart3"
+        android:src="@drawable/ic_heart" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
